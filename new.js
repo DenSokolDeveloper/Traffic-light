@@ -19,7 +19,6 @@ function activeRed() {
 function activeYellow() {
     count = yellowTime;
     yellow.classList.add('active');
-
 count--;
 yellowTime=count;
 }
@@ -35,20 +34,12 @@ function clicker() {
     activeRed();
     let redTimer = setInterval(()=>{
         activeRed();
-        if (count === 5){
-            red.classList.remove('active');
-        }
-        if (count === 4){
-            red.classList.add('active');
-        }
-        if (count === 3){
-            red.classList.remove('active');
-        }
-        if (count === 2){
-            red.classList.add('active');
-        }
-        if (count === 1){
-            red.classList.remove('active');
+        if (count <= 5){
+            if (count%2 !== 0){
+                red.classList.remove('active');
+            }else {
+                red.classList.add('active');
+            }
         }
         if (count === -1){
             clearInterval(redTimer);
@@ -64,20 +55,12 @@ function clicker() {
                      activeGreen();
                      let greenTimer = setInterval(()=>{
                          activeGreen();
-                         if (count === 5){
-                             green.classList.remove('active');
-                         }
-                         if (count === 4){
-                             green.classList.add('active');
-                         }
-                         if (count === 3){
-                             green.classList.remove('active');
-                         }
-                         if (count === 2){
-                             green.classList.add('active');
-                         }
-                         if (count === 1){
-                             green.classList.remove('active');
+                         if (count <= 5){
+                             if (count%2 !== 0){
+                                 red.classList.remove('active');
+                             }else {
+                                 red.classList.add('active');
+                             }
                          }
                          if (count === -1){
                              clearInterval(greenTimer);
