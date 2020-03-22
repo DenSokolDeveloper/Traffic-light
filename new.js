@@ -3,7 +3,6 @@ let yellow = document.querySelector('.yellow');
 let green = document.querySelector('.green');
 let redTime = 10;
 let greenTime = 10;
-let yellowTime= 3;
 let count = document.querySelector('.count');
 let p = document.createElement('p');
 p.classList.add('count');
@@ -17,10 +16,7 @@ function activeRed() {
     redTime=count;
 }
 function activeYellow() {
-    count = yellowTime;
     yellow.classList.add('active');
-count--;
-yellowTime=count;
 }
 function activeGreen() {
     count= greenTime;
@@ -37,29 +33,31 @@ function clicker() {
         if (count <= 5){
             if (count%2 !== 0){
                 red.classList.remove('active');
-            }else {
+            }else{
                 red.classList.add('active');
+                if (count<=1&&count>=0){
+                    activeYellow();
+                    p.remove();
+                }
             }
         }
         if (count === -1){
             clearInterval(redTimer);
             red.classList.remove('active');
             red.removeChild(p);
-            activeYellow();
-            let yellowTimer = setInterval(()=>{
-                activeYellow();
-                 if (count === -1){
-                     clearInterval(yellowTimer);
-                     yellow.classList.remove('active');
-
                      activeGreen();
+            yellow.classList.remove('active');
                      let greenTimer = setInterval(()=>{
                          activeGreen();
-                         if (count <= 5){
-                             if (count%2 !== 0){
+                         if (count <= 5) {
+                             if (count % 2 !== 0) {
                                  green.classList.remove('active');
-                             }else {
+                             } else {
                                  green.classList.add('active');
+                                 if (count <= 1 && count >= 0) {
+                                     activeYellow();
+                                     p.remove();
+                                 }
                              }
                          }
                          if (count === -1){
@@ -69,13 +67,12 @@ function clicker() {
                                 clicker();
                                 redTime=10;
                                 greenTime=10;
-                                yellowTime=2;
                              activeRed();
+                             green.classList.remove('active');
+                             yellow.classList.remove('active');
                          }
-                     },1000);
+                     }, 1000);
                  }
-            },1000);
-        }
     },1000);
 }
 clicker();
