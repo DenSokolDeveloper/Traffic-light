@@ -1,0 +1,52 @@
+body{
+    background: blue;
+}
+#traffic-lighter {
+    width: 100px;
+    height: 250px;
+    background-color: black;
+    margin: auto;
+    border-radius: 8px;
+    padding: 3px;
+}
+.light{
+
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    opacity: 0.4;
+}
+.count{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+.active{
+    opacity: 1;
+}
+.red{
+    background-color:red;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.palka{
+    width: 30px;
+    height: 300px;
+    background-color: black;
+    margin: 0 auto;
+}
+.podstavka{
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    margin: 0 auto;
+}
