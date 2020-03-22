@@ -57,9 +57,9 @@ function clicker() {
                          activeGreen();
                          if (count <= 5){
                              if (count%2 !== 0){
-                                 red.classList.remove('active');
+                                 green.classList.remove('active');
                              }else {
-                                 red.classList.add('active');
+                                 green.classList.add('active');
                              }
                          }
                          if (count === -1){
