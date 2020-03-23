@@ -10,14 +10,12 @@ body{
     padding: 3px;
 }
 .light{
-
     width: 70px;
     height: 70px;
     border-radius: 100%;
     margin: 0 auto;
     margin-top: 10px;
     opacity: 0.4;
-
 }
 .count{
     color: #fff;
